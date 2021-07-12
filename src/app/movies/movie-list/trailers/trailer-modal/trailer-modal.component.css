@@ -10,9 +10,10 @@
 
 .trailer-box {
   position: fixed;
-  top: 30vh;
+  top: 10vh;
   left: 20vw;
-  width: 60vw;
+  width: 40vw;
+  height: 30vw;
   padding: 16px;
   z-index: 100;
   background: white;

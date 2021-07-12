@@ -8,7 +8,9 @@ import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { StreamingComponent } from './movies/movie-list/streaming/streaming.component';
 import { TrailersComponent } from './movies/movie-list/trailers/trailers.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TrailerModalComponent } from './shared/trailer-modal/trailer-modal.component';
+import { TrailerModalComponent } from './movies/movie-list/trailers/trailer-modal/trailer-modal.component';
+import { PlaceholderDirective } from './shared/placeHolder/placeholder.directive';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,15 @@ import { TrailerModalComponent } from './shared/trailer-modal/trailer-modal.comp
     MovieListComponent,
     StreamingComponent,
     TrailersComponent,
-    TrailerModalComponent
+    TrailerModalComponent,
+    PlaceholderDirective,
+    SafePipe
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [
+    TrailerModalComponent
+  ]
 })
 export class AppModule {}

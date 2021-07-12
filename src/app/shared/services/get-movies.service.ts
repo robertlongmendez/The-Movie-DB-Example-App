@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class GetMoviesService {
+watchTrailerUpdated = new EventEmitter<any>();
+
   constructor(private http: HttpClient) {}
 
   getPopular(): any {

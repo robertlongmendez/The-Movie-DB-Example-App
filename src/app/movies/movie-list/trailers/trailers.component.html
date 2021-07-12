@@ -1,4 +1,12 @@
 <span>
-  <a href="https://www.youtube.com/embed/{{trailer_key}}?rel=0" class="btn btn-outline-primary w-100"
+  <!-- <iframe src="https://www.youtube.com/embed/{{trailer_key}}?rel=0" frameborder="0"class="btn btn-outline-primary w-100"
+  target="_top">{{trailer_name}}</iframe> -->
+
+  <a (click)="onPlayTrailer()" class="btn btn-outline-primary w-100"
     target="_top">{{trailer_name}}</a>
 </span>
+<button class="btn btn-primary" >Launch Modal</button>
+<!-- <ng-template appPlaceHolder></ng-template> -->
+<app-trailer-modal *ngIf="watchingTrailer" (close)="onClose()" [trailer_key]="trailer.key" [trailer_name]="trailer.name"></app-trailer-modal>
+
+<!-- href="https://www.youtube.com/embed/{{trailer_key}}?rel=0" -->

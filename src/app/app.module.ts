@@ -8,6 +8,7 @@ import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { StreamingComponent } from './movies/movie-list/streaming/streaming.component';
 import { TrailersComponent } from './movies/movie-list/trailers/trailers.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TrailerModalComponent } from './shared/trailer-modal/trailer-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     MovieListComponent,
     StreamingComponent,
     TrailersComponent,
+    TrailerModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

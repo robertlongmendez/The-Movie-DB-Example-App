@@ -13,13 +13,14 @@ export class TrailerModalComponent {
 @Input() trailer_key?: string;
 
 
+
 @Output() close  = new EventEmitter<void>();
 
 onClose() {
 this.close.emit();
 }
 
-createUrl() {
-'https://www.youtube.com/embed/'+{{trailer_key}}+'?rel=0'
-}
+// createUrl() {
+// 'https://www.youtube.com/embed/'+{{this.trailer_key}}+'?rel=0';
+// }
 }

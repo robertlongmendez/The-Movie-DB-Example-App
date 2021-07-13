@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TrailerModalComponent } from './movies/movie-list/trailers/trailer-modal/trailer-modal.component';
 import { PlaceholderDirective } from './shared/placeHolder/placeholder.directive';
 import { SafePipe } from './safe.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { SafePipe } from './safe.pipe';
     PlaceholderDirective,
     SafePipe
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [

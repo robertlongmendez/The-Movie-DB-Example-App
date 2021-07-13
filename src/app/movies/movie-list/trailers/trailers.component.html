@@ -1,12 +1,17 @@
 <span>
   <!-- <iframe src="https://www.youtube.com/embed/{{trailer_key}}?rel=0" frameborder="0"class="btn btn-outline-primary w-100"
   target="_top">{{trailer_name}}</iframe> -->
-
-  <a (click)="onPlayTrailer()" class="btn btn-outline-primary w-100"
-    target="_top">{{trailer_name}}</a>
+<button class="btn btn-primary" (click)="open(content)">{{trailer_name}}</button>
+<ng-template #content let modal class="modal-lg"></ng-template>
+<div class="modal-header w-100 bg-dark">
+  <h4 class="modal-title" id="modal-basic-title">{{trailer_name}}</h4>
+</div>
+<div class="modal-body bg-dark" style="height: 75vh;">
+<iframe width="100%" height="100%" [src]="getSanitizedUrl('https://www.youtube.com/embeded/'+trailer_key)" frameborder="0"></iframe>
+</div>
+  <!-- <a (click)="onPlayTrailer()" class="btn btn-outline-primary w-100"
+    target="_top">{{trailer_name}}</a> -->
 </span>
-<button class="btn btn-primary" >Launch Modal</button>
-<!-- <ng-template appPlaceHolder></ng-template> -->
-<app-trailer-modal *ngIf="watchingTrailer" (close)="onClose()" [trailer_key]="trailer.key" [trailer_name]="trailer.name"></app-trailer-modal>
+<!-- <app-trailer-modal *ngIf="watchingTrailer" (close)="onClose()" [trailer_key]="trailer.key" [trailer_name]="trailer.name"></app-trailer-modal> -->
 
 <!-- href="https://www.youtube.com/embed/{{trailer_key}}?rel=0" -->

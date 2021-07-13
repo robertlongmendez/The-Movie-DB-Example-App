@@ -4,6 +4,8 @@ import { GetMoviesService } from 'src/app/shared/services/get-movies.service';
 import { PlaceholderDirective } from 'src/app/shared/placeHolder/placeholder.directive';
 import { TrailerModalComponent } from 'src/app/movies/movie-list/trailers/trailer-modal/trailer-modal.component';
 import { Trailers } from 'src/app/shared/models/trailers.model';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-trailers',
@@ -13,14 +15,24 @@ import { Trailers } from 'src/app/shared/models/trailers.model';
 export class TrailersComponent implements OnInit {
   @Input() trailer_key?: string;
   @Input() trailer_name?: string;
-  trailers: Trailers[] = [];
+  // trailers: Trailers[] = [];
    watchingTrailer = false;
-   getMovieService: GetMoviesService;
+  //  getMovieService: GetMoviesService;
   // @ViewChild(PlaceholderDirective) trailerHost: PlaceholderDirective;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor(private modalService: NgbModal,
+    private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {}
+
+  getSanitizedUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url)
+  }
+  open(content: any) {
+    this.modalService.open(content, {
+      size: 'xl', centered: true
+    })
+  }
 
   onPlayTrailer() {
     this.watchingTrailer = true;

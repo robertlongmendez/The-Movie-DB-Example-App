@@ -10,7 +10,6 @@ import { TrailersComponent } from './movies/movie-list/trailers/trailers.compone
 import { HttpClientModule } from '@angular/common/http';
 import { TrailerModalComponent } from './movies/movie-list/trailers/trailer-modal/trailer-modal.component';
 import { PlaceholderDirective } from './shared/placeHolder/placeholder.directive';
-import { SafePipe } from './safe.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -21,14 +20,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     StreamingComponent,
     TrailersComponent,
     TrailerModalComponent,
-    PlaceholderDirective,
-    SafePipe
+    PlaceholderDirective
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [
-    TrailerModalComponent
-  ]
 })
 export class AppModule {}

@@ -15,10 +15,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class TrailersComponent implements OnInit {
   @Input() trailer_key?: string;
   @Input() trailer_name?: string;
-  // trailers: Trailers[] = [];
+  trailers: Trailers[] = [];
    watchingTrailer = false;
-  //  getMovieService: GetMoviesService;
-  // @ViewChild(PlaceholderDirective) trailerHost: PlaceholderDirective;
+   getMovieService: GetMoviesService;
+  @ViewChild(PlaceholderDirective) trailerHost: PlaceholderDirective;
 
   constructor(private modalService: NgbModal,
     private sanitizer: DomSanitizer) {}
